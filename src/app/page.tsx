@@ -11,10 +11,12 @@ import {
   GraduationCap,
   FileText,
   BookOpen,
+  Code2,
 } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "Experience", href: "#experience" },
+  { label: "Education", href: "#education" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
@@ -22,10 +24,17 @@ const NAV_LINKS = [
 
 const EXPERIENCES = [
   {
+    role: "Software Engineer Intern",
+    company: "LinkedIn",
+    location: "Sunnyvale, CA",
+    date: "May 2026 – Present",
+    bullets: ["AI Infrastructure"],
+  },
+  {
     role: "AI Integration Engineer Intern",
     company: "Wolfe, LLC",
     location: "Pittsburgh, PA",
-    date: "Jan 2026 – Present",
+    date: "Jan 2026 – Apr 2026",
     bullets: [
       "Integrating AI workflows to improve content speed, personalization, and efficiency across teams",
       "Building multimodal creative AI pipelines (OpenAI) for video, image, and copy generation",
@@ -65,6 +74,40 @@ const EXPERIENCES = [
       "Built web and mobile app using React Native and ASP.NET Core connecting 200+ creators with 50+ brands",
       "Collaborated with COO and 3-person team to launch MVP within 8 weeks",
     ],
+  },
+];
+
+const EDUCATION = [
+  {
+    school: "Carnegie Mellon University",
+    location: "Pittsburgh, PA",
+    degree: "B.S. in Statistics, Machine Learning & Artificial Intelligence",
+    date: "Aug 2023 – May 2027",
+    coursework: [
+      "Machine Learning",
+      "Computer Vision",
+      "Deep Learning",
+      "Data Structures and Algorithms",
+      "Probability",
+      "Data Science",
+      "Functional Programming",
+      "Linear Algebra",
+      "Statistical Visualization",
+    ],
+    activities: [
+      "Data Science Club",
+      "Artificial Intelligence Club",
+      "Asian Student Association",
+      "Phi Delta Theta Fraternity",
+    ],
+  },
+  {
+    school: "Y Combinator Startup School",
+    location: "San Francisco, CA",
+    degree: "Startup School",
+    date: "Jul 25–26, 2026",
+    coursework: [],
+    activities: [],
   },
 ];
 
@@ -263,6 +306,53 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Education */}
+      <section id="education" className="py-24 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center gap-3 mb-12">
+            <GraduationCap size={24} className="text-[var(--accent)]" />
+            <h2 className="text-3xl font-bold">Education</h2>
+          </div>
+          <div className="space-y-8">
+            {EDUCATION.map((edu, i) => (
+              <div
+                key={i}
+                className="relative pl-8 border-l-2 border-[var(--card-border)] hover:border-[var(--accent)] transition-colors"
+              >
+                <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[var(--accent)]" />
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                  <h3 className="text-lg font-semibold">{edu.school}</h3>
+                  <span className="text-sm text-[var(--muted)] font-mono">
+                    {edu.date}
+                  </span>
+                </div>
+                <p className="text-[var(--accent)] text-sm mb-3">
+                  {edu.degree} &middot; {edu.location}
+                </p>
+                <div className="space-y-2">
+                  {edu.coursework.length > 0 && (
+                    <p className="text-sm text-[var(--muted)] leading-relaxed">
+                      <span className="font-semibold text-[var(--foreground)]">
+                        Relevant Coursework:
+                      </span>{" "}
+                      {edu.coursework.join(", ")}
+                    </p>
+                  )}
+                  {edu.activities.length > 0 && (
+                    <p className="text-sm text-[var(--muted)] leading-relaxed">
+                      <span className="font-semibold text-[var(--foreground)]">
+                        Activities:
+                      </span>{" "}
+                      {edu.activities.join(", ")}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Projects */}
       <section id="projects" className="py-24 px-6">
         <div className="max-w-4xl mx-auto">
@@ -334,7 +424,7 @@ export default function Home() {
       <section id="skills" className="py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-3 mb-12">
-            <GraduationCap size={24} className="text-[var(--accent)]" />
+            <Code2 size={24} className="text-[var(--accent)]" />
             <h2 className="text-3xl font-bold">Skills</h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-8">
