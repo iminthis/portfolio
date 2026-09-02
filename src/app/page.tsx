@@ -87,7 +87,7 @@ const EDUCATION = [
     school: "Carnegie Mellon University",
     location: "Pittsburgh, PA",
     degree: "B.S. in Statistics, Machine Learning & Artificial Intelligence",
-    date: "Aug 2023 to May 2027",
+    date: "Aug 2024 - May 2027",
     coursework: [
       "Machine Learning",
       "Computer Vision",
