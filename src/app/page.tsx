@@ -26,9 +26,14 @@ const EXPERIENCES = [
   {
     role: "Software Engineer Intern",
     company: "LinkedIn",
-    location: "Sunnyvale, CA",
-    date: "May 2026 – Present",
-    bullets: ["AI Infrastructure"],
+    location: "Mountain View, CA",
+    date: "May 2026 – Aug 2026",
+    bullets: [
+      "Cut deployment freshness lag for a production ML inference tier from 11 days to under 1 hour with an autonomous Java/Temporal release-certification pipeline, replacing a 5-step manual release process",
+      "Built end-to-end canary certification for a GPU-backed retrieval-and-ranking inference service, forking live production traffic onto H200 baseline-vs-test clusters",
+      "Drove a statistical validity fix in a partner team's canary platform, replacing per-request latency diffs with baseline-vs-test P95 distribution comparison — redefining pass/fail for every canary on the platform",
+      "Shipped changes across 8 repositories owned by 5+ teams, including a ~1,000-line proposal adding operation-scoped authorization grants to LinkedIn's service authorization platform",
+    ],
   },
   {
     role: "AI Integration Engineer Intern",
@@ -82,7 +87,7 @@ const EDUCATION = [
     school: "Carnegie Mellon University",
     location: "Pittsburgh, PA",
     degree: "B.S. in Statistics, Machine Learning & Artificial Intelligence",
-    date: "Aug 2023 – May 2027",
+    date: "Aug 2023 to May 2027",
     coursework: [
       "Machine Learning",
       "Computer Vision",
@@ -215,7 +220,7 @@ export default function Home() {
           </div>
           <div className="animate-fade-in-up animation-delay-200">
             <p className="text-[var(--muted)] max-w-lg mx-auto mb-8 leading-relaxed">
-              Junior at{" "}
+              Senior at{" "}
               <span className="text-[var(--foreground)] font-medium">
                 Carnegie Mellon University
               </span>{" "}
